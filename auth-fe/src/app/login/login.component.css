@@ -1,0 +1,11 @@
+.sign-in-style{
+  border-style:solid;
+  border-width:2px;
+  min-width: 250px;
+  max-width:500px;
+  position: absolute;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  margin: -100px 0 0 -150px;
+}

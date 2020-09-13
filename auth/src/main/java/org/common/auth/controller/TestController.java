@@ -2,10 +2,12 @@ package org.common.auth.controller;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.common.auth.dto.LoginRequest;
 import org.common.auth.dto.NotificationEmail;
 import org.common.auth.dto.SignUpRequest;
 import org.common.auth.model.User;
 import org.common.auth.service.AuthenticationRequestService;
+import org.common.auth.service.LoginService;
 import org.common.auth.service.MailService;
 import org.common.auth.service.UserSignUpSerivce;
 import org.springframework.http.HttpStatus;
@@ -26,6 +28,7 @@ public class TestController {
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationRequestService authenticationRequestService;
     private final UserSignUpSerivce userSignUpSerivce;
+    private final LoginService loginService;
 
     @PostMapping("/sign")
     public ResponseEntity<String> signUp(@RequestBody SignUpRequest signUpRequest)
@@ -55,6 +58,12 @@ public class TestController {
     public ResponseEntity<String> signUp(@RequestBody User user){
         HttpStatus httpStatus = userSignUpSerivce.signUp(user);
         return new ResponseEntity<>("Updated",httpStatus);
+    }
+
+    @PostMapping(value="/login", consumes = "application/json")
+    public ResponseEntity<String> login(@RequestBody LoginRequest loginRequest){
+        HttpStatus httpStatus =loginService.loginRequest(loginRequest);
+        return new ResponseEntity<>("Login",httpStatus);
     }
 
 }

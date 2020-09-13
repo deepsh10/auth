@@ -1,1 +1,21 @@
-<p>login works!</p>
+<div class="sign-in-style">
+  <div style="text-align:center;border-bottom:solid">
+    Login
+  </div>
+  <form method="post">
+    <table>
+      <tr>
+        <td>Email Id</td>
+        <td><input type="email" [(ngModel)]="data.emailId" name="userEmail"/></td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td><input type="password" [(ngModel)]="data.password" name="password"></td>
+      </tr>
+      <tr>
+        <td><input type="submit" value="Login" (click)="login()"></td>
+        <td></td>
+      </tr>
+    </table>
+  </form>
+</div>

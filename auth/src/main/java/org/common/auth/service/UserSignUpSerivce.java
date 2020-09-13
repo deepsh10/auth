@@ -1,7 +1,7 @@
 package org.common.auth.service;
 
 import lombok.AllArgsConstructor;
-import org.common.auth.model.AuthenticationRequest;
+import org.common.auth.dto.AuthenticationRequest;
 import org.common.auth.model.User;
 import org.common.auth.repository.AuthenticationRequestRepository;
 import org.common.auth.repository.UserRepository;
