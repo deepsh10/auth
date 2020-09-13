@@ -1,0 +1,34 @@
+<div class="sign-in-style">
+  <div style="text-align:center;border-bottom:solid">
+    Sign In to Portal
+  </div>
+  <form>
+    <table>
+      <tr>
+        <td>Email Id</td>
+        <td><input type="email" [(ngModel)]="data.emailId" name="userEmail"/></td>
+        <td><input type="button" value="Generate ID" (click)="validateEmail()"></td>
+      </tr>
+      <tr>
+        <td>URN received on your mail</td>
+        <td><input [(ngModel)]="data.urn" name="urn"/></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td><input type="password" [(ngModel)]="data.password" name="password"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Confirm Password</td>
+        <td><input type="password" [(ngModel)]="data.cpassword" name="cpassword"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><input type="submit" value="Sign In" (click)="signup()"></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </form>
+</div>
